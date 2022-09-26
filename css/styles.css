@@ -38,6 +38,8 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
  .container{
   width: 1200px;
   margin-left: auto;
@@ -107,20 +109,18 @@ img {
 }
 
 .current-page{
+  position: relative;
   color:var(--accent-color);
   padding-bottom: 32px;
   padding-top: 32px;
   
 }
-.current-position{
-  position: relative;
-  display: block;
-}
+
 .current-page::after{
   content: '';
   position: absolute;
   display:block;
-  top: 290%;
+  bottom: 0;
   left:0;
    
   width: 100%;
@@ -138,6 +138,7 @@ img {
   text-decoration: none;
   padding-bottom: 32px;
   padding-top: 32px;
+  transition: color 250ms var(--timing-animation);
 }
 
 
@@ -287,8 +288,7 @@ justify-content: center;
   gap: 30px;
   border: 1px solid var(--social-color);
   border-radius: 4px;
-  transition: fill 250ms var(--timing-animation),
-              border 250ms var(--timing-animation);
+  transition:border 250ms var(--timing-animation);
 }
 
 .client-item:hover svg,
@@ -355,14 +355,14 @@ justify-content: center;
   gap: 30px;
 }
 
-.card-item-li {
+.card-item {
   box-shadow:none;
   transition: box-shadow 250ms var(--timing-animation);
 
 }
 
-.card-item-li:hover,
-.card-item-li:focus{
+.card-item:hover,
+.card-item:focus{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
               0px 4px 4px rgba(0, 0, 0, 0.06),
               1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -372,9 +372,7 @@ justify-content: center;
 .card-item-li:hover .card-item-description,
 .card-item-li:focus .card-item-description{
   transform: translateY(0);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-              0px 4px 4px rgba(0, 0, 0, 0.06),
-              1px 4px 6px rgba(0, 0, 0, 0.16);
+  
 
 }
 
@@ -477,17 +475,16 @@ padding: 20px 24px;
   justify-content:center;
   width: 44px;
   height: 44px;
-  border-radius: none;
+  border-radius: 50%;
   fill: var(--social-color);
 
   transition: fill 250ms var(--timing-animation),
-              background-color 250ms var(--timing-animation),
-              box-shadow 250ms var(--timing-animation);
+              background-color 250ms var(--timing-animation);
 }
 .staff-svg:hover,
 .staff-svg:focus{
   background-color:var(--accent-color);
-  border-radius: 50%;
+  
   fill: var(--white-color);
 }
 .staff-social{
@@ -719,8 +716,7 @@ justify-content: baseline;
 }
 .footer-svg:hover,
 .footer-svg:focus{
-  background-color:var(--accent-color);
-  border-radius: 50%; 
+  background-color:var(--accent-color); 
 }
 
 
@@ -733,6 +729,7 @@ justify-content: baseline;
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
+transition: color 250ms var(--timing-animation);
 }
 .no-scroll {
   overflow: hidden;
@@ -744,6 +741,7 @@ pointer-events: none;
   left: 0;
   width: 100%;
   height: 100%;
+  transition: color 250ms var(--timing-animation);
 
   background-color: rgba(0, 0, 0, 0.2);
 }
