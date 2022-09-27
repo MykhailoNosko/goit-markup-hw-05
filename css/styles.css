@@ -356,6 +356,7 @@ justify-content: center;
 }
 
 .card-item {
+  display: block;
   box-shadow:none;
   transition: box-shadow 250ms var(--timing-animation);
 
@@ -711,8 +712,7 @@ justify-content: baseline;
   border-radius: 50%;
   fill: var(--white-color);
   
-  transition: background-color 250ms var(--timing-animation),
-              border-radius 250ms var(--timing-animation);
+  transition: background-color 250ms var(--timing-animation);
 }
 .footer-svg:hover,
 .footer-svg:focus{
@@ -727,9 +727,10 @@ justify-content: baseline;
 
 .backdrop.is-hidden{
 opacity: 0;
-visibility: hidden;
+visibility:hidden;
 pointer-events: none;
-transition: color 250ms var(--timing-animation);
+transition: opacity 250ms var(--timing-animation),
+            visibility 250ms var(--timing-animation);
 }
 .no-scroll {
   overflow: hidden;
@@ -742,7 +743,6 @@ transition: color 250ms var(--timing-animation);
   width: 100%;
   height: 100%;
   transition: color 250ms var(--timing-animation);
-
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -750,10 +750,11 @@ transition: color 250ms var(--timing-animation);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-animation),
-              opacity 250ms var(--timing-animation);
+              opacity 250ms var(--timing-animation),
+              visibility 250ms var(--timing-animation);
 
   min-width: 528px;
   min-height: 581px;
